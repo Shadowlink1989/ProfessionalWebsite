@@ -1,35 +1,60 @@
+body {
+    margin: 0px;
+}
+
+/*add the style for the nav wrapper div
+using flexbox so they are side by side */
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
     padding: 38px;
 }
 
+/*this style adds flexbox on the left side div
+making this div display things side by side*/
 .left-side {
     display: flex;
 }
 
+/*this style navigates from the nav wrapper
+to the left side using > and affects the divs 
+that are inside left side, it adds a marging,
+changes the font size to 90% and changes
+everything to uppercase*/
 .nav-wrapper > .left-side > div {
     margin-right: 20px;
     font-size: 0.9em;
     text-transform: uppercase;
 }
 
+/*giving the nav link wrapper hyperlinks a height
+of 22px, changes the default html underline style to 
+1px solid transparent underline and a transition
+that changes every 0.5 seconds*/
 .nav-link-wrapper {
     height: 22px;
     border-bottom: 1px solid transparent;
     transition: border-bottom 0.5s;
 }
 
+/*changes the nav link wrapper hyperlinks color
+to grey, takes away the underline with text decoration: none,
+but with the transition and the above style it changes color 
+every 0.5 seconds, NOTE: this specifically affects the a tag*/
 .nav-link-wrapper a {
     color: #8a8a8a;
     text-decoration: none;
     transition: color 0.5s;
 }
 
+/*this style changes the underline to black, when you're
+hovering over the hyperlink */
 .nav-link-wrapper:hover {
     border-bottom: 1px solid black;
 }
 
+/*this style changes the hyperlink text to black, when you're
+hovering over the hyperlink NOTE: this specifically affects the a tag*/
 .nav-link-wrapper a:hover {
     color: black;
 }
