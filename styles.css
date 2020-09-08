@@ -1,7 +1,18 @@
+/* MASTER STYLES*/
+/*select the whole body element in html and make the margin 0
+so that all the elements inside are right next to each other*/
 body {
     margin: 0px;
 }
 
+/*i want the container to use grid, and then i want to create
+these template columns using 1fr (fractional unit)*/
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* NAVBAR STYLES*/
 /*add the style for the nav wrapper div
 using flexbox so they are side by side */
 .nav-wrapper {
@@ -58,3 +69,5 @@ hovering over the hyperlink NOTE: this specifically affects the a tag*/
 .nav-link-wrapper a:hover {
     color: black;
 }
+
+/*PORTFOLIO STYLES*/
