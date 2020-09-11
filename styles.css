@@ -71,3 +71,81 @@ hovering over the hyperlink NOTE: this specifically affects the a tag*/
 }
 
 /*PORTFOLIO STYLES*/
+/*use css grid to make the columns for the imgs
+this will make 3 columns*/
+.portfolio-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*changing the position for the img for it to be relative to the 
+image background */
+.portfolio-item-wrapper {
+    position: relative;
+}
+
+/*start to style the img background it will have the height of 350px and the 
+width will adjust automatically, background size cover will crop the images nicely
+so they are right next to each other because they are different sizes, the
+background img will be centered, because the images are inline in the html code
+there is no reason to load them here hence no repeat will help me apply the styling
+to all different images without them repeating */
+.portfolio-img-background {
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*here i am placing the text right over the img background div,
+in order to put the text on top of the img background position relative 
+has to be in use if i want to have another div nested inside of it,
+when using position absolute i am forcing an element to be somewhere
+it normally doesnt go in order for me to do that it has to be in a parent
+element that has a relative position,*/
+.img-text-wrapper {
+    position: absolute;
+    top: 0; /*want this to be position at the very top*/
+    display: flex; /*using flexbox*/
+    flex-direction: column;
+    justify-content: center; /*center left to right*/
+    align-items: center;/*center top to bottom*/
+    height: 100%;/*want it to take the full aparent height*/
+    text-align: center; /*want all the text inside of it to be centered*/
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/*style the image thats on top of the img background*/
+.logo-wrapper img {
+width: 50%;
+margin-bottom: 20px;
+}
+
+/*here i want the text to transition slowly hence 1s on transition
+also i want it to be transparent until its been hovered over,
+think of it as the starting state and the style underneath is the 
+ending state, since this is the starting state add font weight exactly
+as underneath to make sure the text is the same font size when it starts
+otherwise it will show in screen like its jumping or changing font size 
+when you hover over because it will start as its normal value by default*/
+.img-text-wrapper .subtitle {
+    transition: 1s;
+    font-weight: 600;
+    color: transparent;
+}
+
+/*chaging the color of the subtitle text and making it bold like
+only when hovering over(needs this specification to be able to make it work*/
+.img-text-wrapper:hover .subtitle {
+font-weight: 600;
+color: lightseagreen;
+}
+
+/*this is what i am going to use for the dark transition when 
+you hover over the img*/
+.img-darken {
+    transition: 1s;
+    filter: brightness(10%);
+}

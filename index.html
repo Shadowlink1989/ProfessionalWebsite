@@ -262,6 +262,30 @@
             </div>
         </div>
     </div>
-</body>
 
+</body>
+<!--add javascript code-->
+<script>
+    //this line will grab all items tagged with portfolio-item-wrapper
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
+
+    //this arrow function will get me the specific div and location in 
+    //memory where the img is and will darken it with the css style
+    portfolioItems.forEach(portfolioItem => {
+        //this event listener will act when the mouse is over the img
+        //and will add or apply the img-darken style
+        portfolioItem.addEventListener('mouseover', () => {
+            //console.log(portfolioItem.childNodes);
+            //console.log(portfolioItem.childNodes[1].classList);
+            portfolioItem.childNodes[3].classList.add('img-darken');
+        })
+
+        //this event listener will act when the mouse is not over the img
+        //and will remove the img-darken style
+       /portfolioItem.addEventListener('mouseout', () => {
+           // console.log(portfolioItem.childNodes[1].classList);
+            portfolioItem.childNodes[3].classList.remove('img-darken');
+        })
+    })
+</script>
 </html>
